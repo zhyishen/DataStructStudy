@@ -36,3 +36,11 @@ Status EnQueue(SqQueue &Q, QElemType e){
     Q.rear = (Q.rear +1)%MAXQSIZE;
     return OK;
 }
+
+Status DeQueue(SqQueue &Q, QElemType &e){
+    if(Q.front == Q.rear) return ERROR;
+    e = Q.base[Q.front];
+    Q.front = (Q.front +1)%MAXQSIZE;
+    return OK;
+}
+
